@@ -56,7 +56,7 @@ describe("debugging", () => {
     expect(body).to.equal("Happy 111th birthday, Bilbo Baggins!");
   });
 
-  xit("debug 7", async () => {
+  it("debug 7", async () => {
     const { status, body } = await request(app)
       .get("/pokemon/choose?name=Pikachu")
       .send();
@@ -65,7 +65,7 @@ describe("debugging", () => {
     expect(body).to.equal("Pikachu, I choose you!");
   });
 
-  xit("debug 8", async () => {
+  it("debug 8", async () => {
     const { status } = await request(app).get("/albums");
 
     expect(status).to.equal(200);
