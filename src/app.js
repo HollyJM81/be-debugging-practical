@@ -7,28 +7,29 @@ app.use(express.json());
 // debug tasks up to 8 have NO errors in the test, only in the code below here.
 
 // debug 1
-app.get("/helloworld", (_, res) => {
-  res.status(200).json("Hello World");
+app.get("/hello", (req, res) => {
+  res.status(200).json("Hello World!");
 });
 
 // debug 2
-app.get("/goodbye", (_, res) => {
+app.delete("/goodbye", (req, res) => {
   res.sendStatus(204);
 });
 
 // debug 3(a) and 3(b)
-app.post("/pokemon", (_, res) => {
-  res.status(200).json("Pikachu");
+app.post("/pokemon", (req, res) => {
+  const { pokemon } = req.body;
+  res.status(201).json(pokemon);
 });
 
 // debug 4
-app.get("/pokemon", (_, res) => {
-  res.sendStatus(200).json("Catch them all!");
+app.get("/pokemon", (req, res) => {
+  res.status(200).json("Catch them all!");
 });
 
 // debug 5
-app.delete("/pokemon", (_, res) => {
-  res.status(204);
+app.delete("/pokemon", (req, res) => {
+  res.sendStatus(204);
 });
 
 // debug 6
